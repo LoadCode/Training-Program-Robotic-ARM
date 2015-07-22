@@ -1,0 +1,11 @@
+#Este es el gitIgnore file para este respositorio ya que el desarrollo 
+#se lleva a cabo en el IDE Code::Blocks
+
+
+#ignorar las carpetas bin y obj
+bin/
+obj/
+
+*.cbp
+*.depend
+*.layout
