@@ -47,19 +47,25 @@ int DistMax(int a, int b, int c);
 
 
 /*
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "C_Code_Training.h"
+
+
 int main()
 {
 
     //Vectores con los vertices de los dos puntos de entrenamiento
-    int nVertices  = 3;
+    int nVertices  = 4;
     int        nDist  = nVertices - 1;
-    int  servoA[]  = {90,15,100};
-    int   servoB[]  = {170,100,100};
-    int   servoC[]  = {0,0,90};
+    int  servoA[]  = {90,15,15,90};
+    int   servoB[]  = {170,100,100,170};
+    int   servoC[]  = {0,0,90,90};
 
-    int servoTrainA[300]; //Vectores que vana  contener los grados
-    int servoTrainB[300];
-    int servoTrainC[300];
+    int servoTrainA[500]; //Vectores que vana  contener los grados
+    int servoTrainB[500];
+    int servoTrainC[500];
     int lastIndexA = 0, lastIndexB = 0, lastIndexC = 0;
 
     int DistanMax, i, tamTotalVec = 0;
@@ -74,9 +80,19 @@ int main()
          lastIndexC = linspace2(servoTrainC,servoC[i],servoC[i+1],DistanMax,lastIndexC);
     }
 
-    for(i = 0; i< 167; i++)
+    for(i = 0; i< tamTotalVec; i++)
         printf("servoTrainA[%d] = %d\tservoTrainB[%d] = %d\tservoTrainC[%d] = %d\n",i,servoTrainA[i],i,servoTrainB[i],i,servoTrainC[i]);
-    printf("Tamanio Total = %d\n",tamTotalVec);
+    printf("\n\nTamanio Total de los Vectores de Entrenamiento= %d\n",tamTotalVec);
+
+    /**
+    *En este punto ya tienes tus vectores resultado del entrenamiento, si los recorres desde [0] hasta tamVecMax entonces
+    *ocurre lo que se hizo en el computador, si se recorre al contrario desde tamVecMax hasta [0] entonces volveremos hasta el punto de inicio
+    *Un ejemplo se presenta a continuación
+
+    for(i = tamTotalVec-1; i >= 0; i--)
+        printf("servoTrainA[%d] = %d\tservoTrainB[%d] = %d\tservoTrainC[%d] = %d\n",i,servoTrainA[i],i,servoTrainB[i],i,servoTrainC[i]);
+
     printf("\n\n");
     return 0;
-}*/
+}
+*/
